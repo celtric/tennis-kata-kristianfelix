@@ -2,7 +2,6 @@
 
 namespace AtpRanking;
 
-
 class Game
 {
     /** @var Score */
@@ -44,6 +43,6 @@ class Game
      */
     public function equals(Game $expectedGame)
     {
-        return $this->homeScore == $expectedGame->homeScore && $this->awayScore == $expectedGame->awayScore;
+        return $this->homeScore->equals($expectedGame->homeScore)&& $this->awayScore->equals($expectedGame->awayScore);
     }
 }
