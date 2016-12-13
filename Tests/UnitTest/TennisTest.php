@@ -4,7 +4,7 @@ use AtpRanking\Game;
 use AtpRanking\Score;
 use AtpRanking\WonGame;
 
-class TennisTest extends \PHPUnit_Framework_TestCase
+final class TennisTest extends \PHPUnit_Framework_TestCase
 {
     /** @test */
     public function should_return_0_0_when_no_points_scored(){

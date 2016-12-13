@@ -2,7 +2,7 @@
 
 namespace AtpRanking;
 
-class Score
+final class Score
 {
     /** @var int */
     private $points;
