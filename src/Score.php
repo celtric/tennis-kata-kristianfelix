@@ -4,18 +4,24 @@ namespace AtpRanking;
 
 class Score
 {
-    private $value;
+    /** @var int */
+    private $points;
 
     /**
-     * @param $value
+     * @param int $points
      */
-    public function __construct($value)
+    public function __construct($points)
     {
-        $this->value = $value;
+        $this->points = $points;
     }
 
-    public function equal(Score $score)
+    /**
+     * @param Score $score
+     *
+     * @return bool
+     */
+    public function equals(Score $score)
     {
-        return $this->value == $score->value;
+        return $this->points == $score->points;
     }
 }

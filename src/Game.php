@@ -5,15 +5,16 @@ namespace AtpRanking;
 
 class Game
 {
-    /**
-     * @var Score
-     */
+    /** @var Score */
     private $homeScore;
-    /**
-     * @var Score
-     */
+
+    /** @var Score */
     private $awayScore;
 
+    /**
+     * @param Score $homeScore
+     * @param Score $awayScore
+     */
     public function __construct(Score $homeScore, Score $awayScore)
     {
         $this->homeScore = $homeScore;
@@ -40,32 +41,31 @@ class Game
         return new Game($this->homeScore, $newScore);
     }
 
+    /**
+     * @param Game $expectedGame
+     *
+     * @return bool
+     */
     public function equals(Game $expectedGame)
     {
-        return $this->homeScore == $expectedGame->homeScore() && $this->awayScore == $expectedGame->awayScore();
+        return $this->homeScore == $expectedGame->homeScore && $this->awayScore == $expectedGame->awayScore;
     }
 
-    private function homeScore()
-    {
-        return $this->homeScore;
-    }
-
-    private function awayScore()
-    {
-        return $this->awayScore;
-    }
-
+    /**
+     * @param Score $score
+     *
+     * @return Score
+     */
     private function nextScore(Score $score)
     {
-        if($score->equal(new Score(0))){
+        if($score->equals(new Score(0))){
             return new Score(15);
         }
-        if($score->equal(new Score(15))){
+        if($score->equals(new Score(15))){
             return new Score(30);
         }
-        if($score->equal(new Score(30))){
+        if($score->equals(new Score(30))){
             return new Score(40);
         }
     }
-
 }
