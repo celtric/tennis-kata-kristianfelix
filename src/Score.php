@@ -24,4 +24,20 @@ class Score
     {
         return $this->points == $score->points;
     }
+
+    /**
+     * @return Score
+     */
+    public function next()
+    {
+        if ($this->equals(new Score(0))) {
+            return new Score(15);
+        }
+        if ($this->equals(new Score(15))) {
+            return new Score(30);
+        }
+        if ($this->equals(new Score(30))) {
+            return new Score(40);
+        }
+    }
 }
