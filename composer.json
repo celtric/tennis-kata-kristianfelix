@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "psr-4": {
+            "AtpRanking\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Unit\\": "Tests/UnitTest/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    }
+}
